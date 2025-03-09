@@ -3,7 +3,6 @@ package adapters.primary.ui.vu;
 import adapters.primary.ui.Controller;
 import adapters.primary.ui.constant.Constantes;
 import adapters.primary.ui.models.UiDate;
-import adapters.primary.ui.models.UiPort;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -37,11 +36,11 @@ public class PanelSelection extends JPanel implements ActionListener{
 	/**
 	 *JComboBox<Port> choixPort
 	 */
-	JComboBox<UiPort> choixPort;
+	JComboBox<String> choixPort;
 	/**
 	 *Port[] ports
 	 */
-	private UiPort[] ports;
+	private String[] ports;
 	/**
 	 *JPanel panelNord
 	 */
@@ -92,7 +91,7 @@ public class PanelSelection extends JPanel implements ActionListener{
 	 * et un bas qui contient les boutons pour changer de mois
 	 * @param parPorts
 	 */
-	public PanelSelection(UiPort[] parPorts){
+	public PanelSelection(String[] parPorts){
 		ports = parPorts;
 		panelPort.setLayout(new GridBagLayout());
 
@@ -118,7 +117,7 @@ public class PanelSelection extends JPanel implements ActionListener{
 		//choix du port
 		gridbag.insets = new Insets(25,-190,0,0);
 		//Integer[] array = numbersList.toArray(new Integer[0]); ----------Here
-		choixPort = new JComboBox<UiPort>(ports);
+		choixPort = new JComboBox<String>(ports);
 		choixPort.setSelectedIndex(-1);
 		choixPort.addActionListener(this);
 		panelPort.add(choixPort,gridbag);
@@ -240,8 +239,8 @@ public class PanelSelection extends JPanel implements ActionListener{
 	 * getSelectedPort
 	 * @return
 	 */
-	public UiPort getSelectedPort() {
-		return (UiPort)choixPort.getSelectedItem();
+	public String getSelectedPort() {
+		return (String)choixPort.getSelectedItem();
 	}
 	/**
 	 * enregistreurEcouteur

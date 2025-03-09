@@ -1,7 +1,5 @@
 package adapters.primary.ui.vu;
 
-import adapters.primary.ui.constant.Constantes;
-import adapters.primary.ui.models.UiPort;
 import domain.port.primary.IPortUseCase;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -10,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -39,7 +36,7 @@ public class PanelChargement extends JPanel{
 	/**
 	 * Liste des ports avec les informations
 	 */
-    static UiPort[] ports;
+    static String[] ports;
     /**
      * boolean pour verifier si la fenetre chargement a ete fermer pendant son chargement
      */

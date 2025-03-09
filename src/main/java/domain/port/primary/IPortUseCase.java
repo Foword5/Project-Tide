@@ -5,5 +5,5 @@ import domain.Entity.*;
 public interface IPortUseCase {
     public String[] getPortsName(); // get all port names
 
-    public void getMareejour(Date date, Port port);
+    public MareeJour getMareejour(int jour, int mois, String port);
 }

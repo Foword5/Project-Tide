@@ -112,52 +112,48 @@ public class MareeJour {
 	}
 	
 	/**
-	 * Methode pour obtenir une heure de pleine mer de son choix
+	 * Methode pour obtenir les heures de pleine mer
 	 * 
-	 * @param nbr num�ro de la pleine mer
-	 * @return l'heure de la pleine mer
+	 * @return les heures de pleine mer
 	 */
-	public String getHeurePleineMer(int nbr) {
-		return heuresPleineMer[nbr-1];
+	public String[] getHeuresPleineMer() {
+		return heuresPleineMer;
 	}
 
 	/**
-	 * Methode pour obtenir la hauteur de la pleine mer de son choix
+	 * Methode pour obtenir les hauteurs de pleine mer
 	 * 
-	 * @param nbr num�ro de la basse mer
-	 * @return hauteur de la basse mer
+	 * @return les hauteurs de pleine mer
 	 */
-	public String getHauteurPleineMer(int nbr) {
-		return hauteursPleineMer[nbr-1];
+	public String[] getHauteursPleineMer() {
+		return hauteursPleineMer;
 	}
 
 	/**
-	 * Methode pour obtenir une heure de basse mer de son choix
+	 * Methode pour obtenir les heures de basse mer
 	 * 
-	 * @param nbr num�ro de la basse mer
-	 * @return l'heure de la basse mer
+	 * @return les heures de basse mer
 	 */
-	public String getHeureBasseMer(int nbr) {
-		return heuresBasseMer[nbr-1];
+	public String[] getHeuresBasseMer() {
+		return heuresBasseMer;
 	}
 
 	/**
-	 * Methode pour obtenir la hauteur de la basse mer de son choix
+	 * Methode pour obtenir les hauteurs de basse mer
 	 * 
-	 * @param nbr num�ro de la pleine mer
-	 * @return hauteur de la pleine mer
+	 * @return les hauteurs de basse mer
 	 */
-	public String getHauteurBasseMer(int nbr) {
-		return hauteursBasseMer[nbr-1];
+	public String[] getHauteursBasseMer() {
+		return hauteursBasseMer;
 	}
+
 	/**
-	 * Methode pour obtenir un coeficient de son choix
+	 * Methode pour obtenir les coefficients
 	 * 
-	 * @param nbr num�ro du coeficient
-	 * @return le coeficient demand�
+	 * @return les coefficients
 	 */
-	public String getCoef(int nbr) {
-		return coefficient[nbr-1];
+	public String[] getCoefficients() {
+		return coefficient;
 	}
 
 	/**
@@ -166,8 +162,8 @@ public class MareeJour {
 	 * @param heure l'heure
 	 * @return la hauteur
 	 */
-	public String getHauteur(int heure) {
-		return hauteursMer[heure];
+	public String[] getHauteurs() {
+		return hauteursMer;
 	}
 
 	/**
@@ -231,14 +227,5 @@ public class MareeJour {
 	 */
 	public void setHauteur(int heure, String hauteur) {
 		hauteursMer[heure] = hauteur;
-	}
-
-	/**
-	 * Methode pour obtenir toute les hauteurs
-	 * 
-	 * @return
-	 */
-	public String[] getAllHauteurs() {
-		return hauteursMer;
 	}
 }

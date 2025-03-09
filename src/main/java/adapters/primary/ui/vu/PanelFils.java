@@ -12,7 +12,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import adapters.primary.ui.Controller;
-import adapters.primary.ui.models.*;
 
 public class PanelFils extends JPanel{
 	/**
@@ -34,14 +33,14 @@ public class PanelFils extends JPanel{
 	/**
 	 *Liste des ports avec les informations 
 	 */
-	private UiPort[] ports;
+	private String[] ports;
 	
 	/**
 	 * PanelFils ou il y'a les 2 panels celui de droite ou il y'a la selection de la date et du port et celui de gauche ou il y'a l'affichage
 	 * @param parPorts
 	 * @throws IOException
 	 */
-	public PanelFils(UiPort[] parPorts) throws IOException {
+	public PanelFils(String[] parPorts) throws IOException {
 		
 		ports = parPorts;
 		setBackground(new Color (0,0,0));
