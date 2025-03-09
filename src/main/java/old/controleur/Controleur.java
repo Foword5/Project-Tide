@@ -27,12 +27,12 @@ public class Controleur implements ActionListener {
 	/**
 	 * La date s�lectionn�
 	 */
-	Date date = null;
+	UiDate date = null;
 
 	/**
 	 * Le port s�lectionn�
 	 */
-	Port port = null;
+	UiPort port = null;
 
 	/**
 	 * Constructeur de la classe
@@ -57,7 +57,7 @@ public class Controleur implements ActionListener {
 				panelAffichage.getPanelHeureParHeure().getJourMois().setText("Choisisser un port");
 				return;
 			}else {
-				MareeJour maree = port.getValue(date.getJour(), date.getMois());
+				UiMareeJour maree = port.getValue(date.getJour(), date.getMois());
 				panelAffichage.getPanelPleineMer().setValue(maree);
 				panelAffichage.getPanelHeureParHeure().setValue(maree);
 
@@ -73,7 +73,7 @@ public class Controleur implements ActionListener {
 				panelAffichage.getPanelHeureParHeure().getJourMois().setText("Choisisser un jour");
 				return;
 			}else {
-				MareeJour maree = port.getValue(date.getJour(), date.getMois());
+				UiMareeJour maree = port.getValue(date.getJour(), date.getMois());
 				panelAffichage.getPanelPleineMer().setValue(maree);
 				panelAffichage.getPanelHeureParHeure().setValue(maree);
 

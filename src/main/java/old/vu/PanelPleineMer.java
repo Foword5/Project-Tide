@@ -57,7 +57,7 @@ public class PanelPleineMer extends JPanel implements Constantes{
 		add(rien);
 
 		//JTABLE
-		setValue(new MareeJour());
+		setValue(new PortReaderMareeJour());
 		
 		table.setFocusable(false);
 		table.setDefaultEditor(Object.class, null);
@@ -86,7 +86,7 @@ public class PanelPleineMer extends JPanel implements Constantes{
 	 * 
 	 * @param maree
 	 */
-	public void setValue(MareeJour maree) {
+	public void setValue(PortReaderMareeJour maree) {
 		Object[][] valeurs = {
 				{"BM",maree.getHeureBasseMer(1),maree.getHauteurBasseMer(1),"---"},
 				{"PM",maree.getHeurePleineMer(1),maree.getHauteurPleineMer(1),maree.getCoef(1)},

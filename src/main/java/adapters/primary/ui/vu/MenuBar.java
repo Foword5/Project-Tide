@@ -1,7 +1,7 @@
-package vu;
+package adapters.primary.ui.vu;
 
-import constantes.Constantes;
-import modele.Port;
+import adapters.primary.ui.constant.Constantes;
+import adapters.primary.ui.models.UiPort;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -52,14 +52,14 @@ public class MenuBar extends JMenuBar{
 	/**
 	 * Liste des ports avec les informations
 	 */
-	private Port[] ports;
+	private UiPort[] ports;
 
 	/**
 	 * JMenu Bar
 	 * @param fenetreMere
 	 * @param parPorts
 	 */
-	public MenuBar(FenetreMere fenetreMere, Port[] parPorts) {
+	public MenuBar(FenetreMere fenetreMere, UiPort[] parPorts) {
 		this.fenetreMere = fenetreMere;
 		
 		ports = parPorts;

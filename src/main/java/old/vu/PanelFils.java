@@ -33,14 +33,14 @@ public class PanelFils extends JPanel{
 	/**
 	 *Liste des ports avec les informations 
 	 */
-	private Port[] ports;
+	private UiPort[] ports;
 	
 	/**
 	 * PanelFils ou il y'a les 2 panels celui de droite ou il y'a la selection de la date et du port et celui de gauche ou il y'a l'affichage
 	 * @param parPorts
 	 * @throws IOException
 	 */
-	public PanelFils(Port[] parPorts) throws IOException {
+	public PanelFils(UiPort[] parPorts) throws IOException {
 		
 		ports = parPorts;
 		setBackground(new Color (0,0,0));

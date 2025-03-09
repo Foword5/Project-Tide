@@ -1,10 +1,11 @@
-package vu;
-
-import modele.MareeJour;
+package adapters.primary.ui.vu;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+
+import adapters.primary.ui.models.UiMareeJour;
+
 import java.awt.*;
 
 public class PanelHeureParHeure extends JPanel {
@@ -48,7 +49,7 @@ public class PanelHeureParHeure extends JPanel {
 		add(rien);
 
 		//JTABLE
-		setValue(new MareeJour());
+		setValue(new UiMareeJour());
 		table.setFocusable(false);
 		table.setDefaultEditor(Object.class, null);
 		table.setRowSelectionAllowed(true);
@@ -96,7 +97,7 @@ public class PanelHeureParHeure extends JPanel {
 	 * 
 	 * @param maree
 	 */
-	public void setValue(MareeJour maree) {
+	public void setValue(UiMareeJour maree) {
 		Object[][] valeurs = {
 				{"00","01","02","03","04","05"},
 				{maree.getHauteur(0),maree.getHauteur(1),maree.getHauteur(2),maree.getHauteur(3),maree.getHauteur(4),maree.getHauteur(5)},

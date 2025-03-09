@@ -1,4 +1,4 @@
-package modele;
+package domain.Entity;
 
 import java.io.Serializable;
 
@@ -46,13 +46,6 @@ public class Port implements Comparable <Port>, Serializable{
 	 */
 	public void setJour(int jour, int mois, MareeJour mareeJour) {
 		marees[mois-1][jour-1] = mareeJour;
-	}
-
-	/**
-	 * Methode pour d�finir une ligne du tableau
-	 */
-	public void setMois(int mois, MareeJour[] mareeJour) {
-		marees[mois-1] = mareeJour;
 	}
 
 	/**

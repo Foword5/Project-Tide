@@ -40,7 +40,7 @@ public class PanelChargement extends JPanel{
 	/**
 	 * Liste des ports avec les informations
 	 */
-    static Port[] ports;
+    static UiPort[] ports;
     /**
      * boolean pour verifier si la fenetre chargement a ete fermer pendant son chargement
      */
@@ -105,9 +105,9 @@ public class PanelChargement extends JPanel{
 		        		////////////////////////////////////////////////////////////////////////
 		        		File fichier = new File(Constantes.lienFichier);
 		        		if (fichier.length() != 0) {
-		        			ports = (Port[]) LectureEcriture.lecture(fichier);
+		        			ports = (UiPort[]) LectureEcriture.lecture(fichier);
 		        		}else {
-		        			ports = LectureFichierTxt.getPorts().toArray(new Port[0]);
+		        			ports = LectureFichierTxt.getPorts().toArray(new UiPort[0]);
 		        			LectureEcriture.ecriture(fichier,ports);
 		        		}
 		        		Arrays.sort(ports);

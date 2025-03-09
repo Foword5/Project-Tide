@@ -1,9 +1,9 @@
-package vu;
+package adapters.primary.ui.vu;
 
-import constantes.Constantes;
-import controleur.Controleur;
-import modele.Date;
-import modele.Port;
+import adapters.primary.ui.Controller;
+import adapters.primary.ui.constant.Constantes;
+import adapters.primary.ui.models.UiDate;
+import adapters.primary.ui.models.UiPort;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -37,11 +37,11 @@ public class PanelSelection extends JPanel implements ActionListener{
 	/**
 	 *JComboBox<Port> choixPort
 	 */
-	JComboBox<Port> choixPort;
+	JComboBox<UiPort> choixPort;
 	/**
 	 *Port[] ports
 	 */
-	private Port[] ports;
+	private UiPort[] ports;
 	/**
 	 *JPanel panelNord
 	 */
@@ -69,11 +69,11 @@ public class PanelSelection extends JPanel implements ActionListener{
 	/**
 	 *int Index 
 	 */
-	static int Index = new Date().getMois()-1;
+	static int Index = new UiDate().getMois()-1;
 	/**
 	 *int Annee 
 	 */
-	private int Annee = new Date().getAnnee();
+	private int Annee = new UiDate().getAnnee();
 	/**
 	 * CardLayout card 
 	 */
@@ -92,7 +92,7 @@ public class PanelSelection extends JPanel implements ActionListener{
 	 * et un bas qui contient les boutons pour changer de mois
 	 * @param parPorts
 	 */
-	public PanelSelection(Port[] parPorts){
+	public PanelSelection(UiPort[] parPorts){
 		ports = parPorts;
 		panelPort.setLayout(new GridBagLayout());
 
@@ -118,7 +118,7 @@ public class PanelSelection extends JPanel implements ActionListener{
 		//choix du port
 		gridbag.insets = new Insets(25,-190,0,0);
 		//Integer[] array = numbersList.toArray(new Integer[0]); ----------Here
-		choixPort = new JComboBox<Port>(ports);
+		choixPort = new JComboBox<UiPort>(ports);
 		choixPort.setSelectedIndex(-1);
 		choixPort.addActionListener(this);
 		panelPort.add(choixPort,gridbag);
@@ -135,7 +135,7 @@ public class PanelSelection extends JPanel implements ActionListener{
 		nameMois.setFont(new Font("Arial",Font.BOLD,15));
 		panelNord.add(nameMois);
 
-		Date today = new Date();
+		UiDate today = new UiDate();
 
 		// Panel Centre
 		panelCentre.setLayout(card); 		//ajoute le panelCentre au Card layout appeller card avec setLayout
@@ -240,14 +240,14 @@ public class PanelSelection extends JPanel implements ActionListener{
 	 * getSelectedPort
 	 * @return
 	 */
-	public Port getSelectedPort() {
-		return (Port)choixPort.getSelectedItem();
+	public UiPort getSelectedPort() {
+		return (UiPort)choixPort.getSelectedItem();
 	}
 	/**
 	 * enregistreurEcouteur
 	 * @param controleur
 	 */
-	public void enregistreEcouteur(Controleur controleur) {
+	public void enregistreEcouteur(Controller controleur) {
 		choixPort.setActionCommand("port");
 		choixPort.addActionListener(controleur);
 		for(PanelMois panel : panelMois) {

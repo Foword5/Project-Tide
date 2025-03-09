@@ -1,9 +1,9 @@
-package vu;
+package adapters.primary.ui.vu;
 
-import constantes.Constantes;
-import controleur.Controleur;
-import modele.CalendrierDuMois;
-import modele.Date;
+import adapters.primary.ui.Controller;
+import adapters.primary.ui.constant.Constantes;
+import adapters.primary.ui.models.UiCalendrierDuMois;
+import adapters.primary.ui.models.UiDate;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -26,7 +26,7 @@ public class PanelMois extends JPanel implements ActionListener,Constantes{
 	/**
 	 *BoutonDate boutonSelectionne
 	 */
-	BoutonDate boutonSelectionne = new BoutonDate(new Date()) ;	
+	BoutonDate boutonSelectionne = new BoutonDate(new UiDate()) ;	
 	/**
 	 *ArrayList <BoutonDate> 
 	 */
@@ -42,9 +42,8 @@ public class PanelMois extends JPanel implements ActionListener,Constantes{
 	 * @param mois
 	 */
 	public PanelMois(int mois)  {
-		Date today = new Date();
 
-		Collection <Date> datesDuMois = new CalendrierDuMois(mois,2021).getDates();
+		Collection <UiDate> datesDuMois = new UiCalendrierDuMois(mois,2021).getDates();
 		//System.out.println(datesDuMois);		
 		this.setLayout(new GridLayout (0,7,8,8));
 		for (int i= 0; i < 7 ; i++) {
@@ -54,9 +53,9 @@ public class PanelMois extends JPanel implements ActionListener,Constantes{
 
 		
 
-		Iterator <Date> iterateur = datesDuMois.iterator();
+		Iterator <UiDate> iterateur = datesDuMois.iterator();
 		while (iterateur.hasNext()) {
-			Date date = iterateur.next() ;
+			UiDate date = iterateur.next() ;
 			boutonJour = new  BoutonDate (date);
 			boutonJour.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(94,212,245)));
 			boutonJour.setFocusPainted(false);
@@ -124,7 +123,7 @@ public class PanelMois extends JPanel implements ActionListener,Constantes{
 	 * enregistreEcouteur
 	 * @param controleur
 	 */
-	public void enregistreEcouteur(Controleur controleur) {
+	public void enregistreEcouteur(Controller controleur) {
 		for(BoutonDate bouton : listeBoutons) {
 			bouton.setActionCommand("jour");
 			bouton.addActionListener(controleur);

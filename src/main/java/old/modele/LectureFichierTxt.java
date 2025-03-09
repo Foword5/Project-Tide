@@ -37,7 +37,7 @@ public class LectureFichierTxt implements Constantes {
 			while ((strCurrentLine = bufferedreader.readLine()) != null) {
 				String[] info = strCurrentLine.split("\t");
 
-				MareeJour maree = new MareeJour();
+				UiMareeJour maree = new UiMareeJour();
 				maree.setHeurePleineMer(new String[]{info[1],info[4]});
 				maree.setHauteurPleineMer(new String[]{info[2],info[5]});
 				maree.setCoef(new String[]{info[3],info[6]});
