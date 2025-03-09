@@ -1,4 +1,4 @@
-package domain.Entity;
+package domain.entity;
 
 /**
  * Classe réunissant les inforamtions d'une marée lors d'une journée

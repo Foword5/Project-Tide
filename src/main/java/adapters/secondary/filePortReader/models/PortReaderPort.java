@@ -1,6 +1,13 @@
 package adapters.secondary.filePortReader.models;
 
-public class PortReaderPort {
+import java.io.Serializable;
+
+public class PortReaderPort implements Serializable{
+	/**
+	 * Serial Id
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * Nom du port
 	 */

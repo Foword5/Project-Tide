@@ -3,6 +3,9 @@ package adapters.primary.ui.vu;
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
+
+import domain.port.primary.IPortUseCase;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -25,17 +28,19 @@ public class FenetreMere extends JFrame{
 	 */
 	static PanelChargement contentPaneChargement;
 
-	
+	private IPortUseCase primaryPort;
+
 	/**
 	 * FenetreMere()
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
 	//Fenetre de chargement
-	public FenetreMere() throws InterruptedException, IOException {
+	public FenetreMere(IPortUseCase primaryPort) throws InterruptedException, IOException {
 		super("chargement ...");
+		this.primaryPort = primaryPort;
 		Image fondPanel = ImageIO.read(new File("src/main/resources/image/fond.png"));
-		contentPaneChargement = new PanelChargement(this,fondPanel);  
+		contentPaneChargement = new PanelChargement(this,fondPanel, primaryPort);  
 		setDefaultCloseOperation (EXIT_ON_CLOSE);
 		setSize (534,320); 
 		setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/resources/image/load.jpg"));
@@ -53,8 +58,9 @@ public class FenetreMere extends JFrame{
 	 * @throws IOException
 	 * @throws LineUnavailableException
 	 */
-	public FenetreMere(int i) throws MalformedURLException, UnsupportedAudioFileException, IOException, LineUnavailableException{
+	public FenetreMere(IPortUseCase primaryPort, int i) throws MalformedURLException, UnsupportedAudioFileException, IOException, LineUnavailableException{
 		super("Horaires Marées");
+		this.primaryPort = primaryPort;
 		contentPane = new PanelFils(PanelChargement.ports);
 		setDefaultCloseOperation (EXIT_ON_CLOSE);
 		setSize (1010,655); 
@@ -97,21 +103,10 @@ public class FenetreMere extends JFrame{
 	    clip.open(audioIn);
 	    clip.start();
 	}
-	
-	/**main
-	 * @param args
-	 * @throws MalformedURLException
-	 * @throws UnsupportedAudioFileException
-	 * @throws IOException
-	 * @throws LineUnavailableException
-	 * @throws InterruptedException
-	 */
-	public static void main (String [] args) throws MalformedURLException, UnsupportedAudioFileException, IOException, LineUnavailableException, InterruptedException {
-		new FenetreMere();
-		//appelle directe sans le chargement :
-		//new FenetreMere(1);
+
+	public FenetreMere reset() throws InterruptedException, IOException {
+		return new FenetreMere(this.primaryPort);
 	}
-	
 }
 /*\ 		   /*\
  * JAVA PROJECT *

@@ -1,10 +1,16 @@
 package adapters.secondary.filePortReader.models;
 
+import java.io.Serializable;
+
 /**
  * Classe réunissant les inforamtions d'une marée lors d'une journée
  *
  */
-public class PortReaderMareeJour {
+public class PortReaderMareeJour implements Serializable{
+	/**
+	 * Serial Id
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * Liste des heures des deux possibles pleine mer de la journ�e
 	 */

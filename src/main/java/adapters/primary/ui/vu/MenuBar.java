@@ -130,7 +130,7 @@ public class MenuBar extends JMenuBar{
             	        public void windowClosing(WindowEvent et) {
             	        	try {
 								@SuppressWarnings("unused")
-								FenetreMere test = new FenetreMere();
+								FenetreMere test = fenetreMere.reset();
 							} catch (InterruptedException | IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -186,12 +186,12 @@ public class MenuBar extends JMenuBar{
                 			if (frame.isDefaultLookAndFeelDecorated() == true) {
                 				JFrame.setDefaultLookAndFeelDecorated(false);
     							@SuppressWarnings("unused")
-    							FenetreMere test = new FenetreMere();
+    							FenetreMere test = fenetreMere.reset();
                 			}
                 			else{
                     			JFrame.setDefaultLookAndFeelDecorated(true);
     							@SuppressWarnings("unused")
-    							FenetreMere test = new FenetreMere();
+    							FenetreMere test = fenetreMere.reset();
                 			}
 
 						}
@@ -203,7 +203,7 @@ public class MenuBar extends JMenuBar{
         	        public void windowClosing(WindowEvent et) {
                 		try {
 							@SuppressWarnings("unused")
-							FenetreMere test = new FenetreMere();
+							FenetreMere test = fenetreMere.reset();
 						}
                 		catch (InterruptedException | IOException e1) {
 						}

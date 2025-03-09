@@ -50,9 +50,10 @@ public class PanelChargement extends JPanel{
 	static IPortUseCase primaryPort;
 
     @SuppressWarnings("static-access")
-	public PanelChargement(FenetreMere fenetre,Image image){
+	public PanelChargement(FenetreMere fenetre,Image image, IPortUseCase primaryPort) {
     	this.fenetre = fenetre;
 		this.image = image;
+		this.primaryPort = primaryPort;
 		//si la fenetre et deja decorer
 		if (fenetre.isDefaultLookAndFeelDecorated() == true) {
 			setBackground(new Color (0,0,0)); 
@@ -110,7 +111,7 @@ public class PanelChargement extends JPanel{
 		            	try {
 		            		if (vrai == false) {
 		            			FenetreMere.playSound("src/main/resources/son/DémarrageWindows11.wav");
-		            			new FenetreMere(1);
+		            			new FenetreMere(primaryPort,1);
 		            		}
 						} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
 							e.printStackTrace();

@@ -1,12 +1,6 @@
-package domain.Entity;
+package domain.entity;
 
-import java.io.Serializable;
-
-public class Port implements Comparable <Port>, Serializable{
-	/**
-	 * Serial Id
-	 */
-	private static final long serialVersionUID = 1L;
+public class Port{
 
 	/**
 	 * Nom du port
@@ -69,17 +63,5 @@ public class Port implements Comparable <Port>, Serializable{
 	 */
 	public MareeJour getValue(int jour,int mois){
 		return marees[mois-1][jour-1];
-	}
-	
-	/**
-	 * Methode pour comparer deux ports, la comparaison se fait alphab�tiquement
-	 * 
-	 * 1 : sup�rieure
-	 * -1 : inf�rieure
-	 * 0 : �gaux
-	 */
-	@Override
-	public int compareTo(Port o) {
-		return nom.compareTo(o.toString());
 	}
 }

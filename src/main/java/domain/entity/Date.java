@@ -1,4 +1,4 @@
-package domain.Entity;
+package domain.entity;
 
 import domain.constant.Constantes;
 

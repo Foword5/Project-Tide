@@ -9,9 +9,8 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import domain.entity.MareeJour;
 import domain.port.primary.IPortUseCase;
-import domain.Entity.MareeJour;
-
 import adapters.primary.ui.models.UiDate;
 import adapters.primary.ui.models.UiMareeJour;
 import adapters.primary.ui.vu.PanelAffichage;
@@ -20,7 +19,18 @@ import adapters.primary.ui.vu.BoutonDate;
 import adapters.primary.ui.vu.FreeChart;
 
 public class Controller implements ActionListener {
-    
+
+    /**
+     * Static field for portUseCase
+     */
+    private static IPortUseCase portUseCase;
+
+    /**
+     * Static method to set portUseCase
+     */
+    public static void setPortUseCase(IPortUseCase portUseCase) {
+        Controller.portUseCase = portUseCase;
+    }
 
 	/**
 	 * Le panelAffichage
@@ -41,11 +51,6 @@ public class Controller implements ActionListener {
 	 * Le port s�lectionn�
 	 */
 	String port = null;
-
-	/**
-	 * Le domain
-	 */
-	IPortUseCase portUseCase;
 
 	/**
 	 * Constructeur de la classe
